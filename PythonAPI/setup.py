@@ -7,7 +7,7 @@ import numpy as np
 ext_modules = [
     Extension(
         'halpecocotools._mask',
-        sources=['common/maskApi.c', 'halpecocotools/_mask.pyx'],
+        sources=['common/maskApi.c'],
         include_dirs = [np.get_include(), 'common'],
         extra_compile_args=[],
     )
@@ -20,7 +20,7 @@ setup(
     install_requires=[
         'setuptools>=18.0',
         'cython>=0.27.3',
-        'matplotlib>=2.1.0',
+        'matplotlib<3.6',
     ],
     version='0.0.0',
     description="COCO API for Halpe-Fullbody dataset",
